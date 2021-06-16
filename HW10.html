@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-tw">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    
+    <script>
+        function cal(form) 
+        {
+            height = document.getElementById("b").value;
+            weight = document.getElementById("a").value;
+            BMI =  weight/((height/100)*(height/100));
+            document.getElementById("BMI").value = BMI;
+        }
+    </script>
+
+    <title>HW10</title>
+    <style> 
+        h1{
+               background-color: rgb(62, 12, 180);
+               font-weight: bold;
+               font-family: "標楷體";
+               font-size: xx-large;
+               border-style: solid;
+               border-radius: 10px;
+           }      
+        h5{
+               background-color: rgb(113, 93, 185);
+               font-weight: bold;
+               font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+               font-size: larger;
+               border-style: double;
+               border-radius: initial;
+               padding: 5px;
+           }   
+       </style>
+  </head>
+  <body>
+    <header>
+      <div class="container-fluid">
+          <div class="row text-center border border-primary">
+              這是BMI test 系統 
+          </div>
+      </div>
+    </header>
+      
+    <nav class="navbar navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="https://depart.femh.org.tw/dietary/3OPD/BMI.htm">參考來源</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"data-bs-target="#navbarNav"aria-controls="navbarNav"aria-expanded="false"aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+            </li>
+          </ul>
+        </div>
+      </div> 
+    </nav>
+    <br>
+
+    <main>
+        <article>
+          <div class="container-fluid px-5">
+            <div class="row g-5">
+                <div class="col-sm-6">
+                    <span style="border:3px  rgb(4, 78, 78)solid; padding: 5px; background-color:rgb(129, 29, 187);" >
+                     <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title">第一種BMI做法</h5>
+                        <p class="card-text">
+                            <form oninput="BMI.value=parseInt(a.value)/((parseInt(b.value)/100)*(parseInt(b.value)/100))">
+                              <p>體重 : <input type="number" id="a" name="體重" value="" > Kg </p>
+                              <p>身高 : <input type="number" id="b" name="身高" value="" > Cm </p>
+                              <p>執行 : <input type="button" value="計算" onclick="cal(form)"></p>
+                              <p>BMI值 :<output> <input type="text" id="BMI" name="BMI" for="a b"> </output> </p>
+                            </form>
+                        </p>
+                    </div>
+                    </div>
+                </div>
+            
+                <div class="col-sm-6">
+                <span style="border:3px rgb(230, 209, 141) solid; padding: 5px; background-color: rgb(178, 125, 209);" >
+                </span>
+                <div class="card text-whit bg-warning border-secondary">
+                  <div class="card-body">
+                     <h5 class="card-title text-white ">第二種BMI作法</h5>
+                     <p class="card-text">
+                        <form oninput="BMI2.value=parseInt(a.value)/((parseInt(b.value)/100)*(parseInt(b.value)/100))">
+                        <p>體重 : <input type="number" id="a" name="體重" value="" > Kg </p>  
+                        <p>身高 : <input type="number" id="b" name="身高" value="" > Cm </p>
+                        <p>執行 : <input type="button" value="計算" onclick="cal(form)"></p>
+                        <p>BMI值 :<output><input type="text" id="BMI" name="BMI2" for="a b"> </output> </p>
+                        </form>
+                     </p>
+                  </div>
+                </div>
+               </div>
+            </div>
+          </div>
+        </article>
+    </main>
+    <footer>
+      <p class="text-end text-muted">
+      <p>從 <time>10:00</time> ~ <time>21:00</time>製作 By Crystal </p>   
+      </p>
+    </footer>  
+  
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
